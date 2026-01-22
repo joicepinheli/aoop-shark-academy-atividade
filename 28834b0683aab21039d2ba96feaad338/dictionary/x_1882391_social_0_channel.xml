@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d26887ce83aab21039d2ba96feaad3a2" label="Channel" max_length="40" name="x_1882391_social_0_channel" type="collection">
+        <element label="Password" max_length="100" name="password" type="string"/>
+        <element label="Number of Posts" max_length="40" name="number_of_posts" type="integer"/>
+        <element label="Profile" max_length="1024" name="profile" type="url"/>
+        <element label="Number of Followers" max_length="40" name="number_of_followers" type="integer"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element choice="3" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="LinkedIn" sequence="2" value="linkedin"/>
+                <element inactive_on_update="false" label="Youtube" sequence="3" value="youtube"/>
+                <element inactive_on_update="false" label="Instagram" sequence="1" value="instagram"/>
+                <element inactive_on_update="false" label="Facebook" sequence="0" value="facebook"/>
+            </choice>
+        </element>
+        <element label="Username" max_length="100" name="username" type="string"/>
+        <element label="Observations" max_length="500" name="observations" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>
