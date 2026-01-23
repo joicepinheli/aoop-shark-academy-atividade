@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
     <sys_embedded_help_role action="INSERT_OR_UPDATE">
-        <order>10</order>
-        <role/>
+        <order>100</order>
+        <role display_value="x_1882391_social_0.social_manager" name="x_1882391_social_0.social_manager">9946abaa832eb61039d2ba96feaad30f</role>
         <sys_class_name>sys_embedded_help_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-01-21 19:00:09</sys_created_on>
-        <sys_id>a8838b0683aab21039d2ba96feaad340</sys_id>
+        <sys_created_on>2026-01-23 11:15:05</sys_created_on>
+        <sys_id>673c23a6836eb61039d2ba96feaad36f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>e4838b0683aab21039d2ba96feaad33d</sys_name>
+        <sys_name>9946abaa832eb61039d2ba96feaad30f</sys_name>
         <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
         <sys_policy/>
         <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
-        <sys_update_name>sys_embedded_help_role_a8838b0683aab21039d2ba96feaad340</sys_update_name>
+        <sys_update_name>sys_embedded_help_role_673c23a6836eb61039d2ba96feaad36f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-21 19:00:09</sys_updated_on>
+        <sys_updated_on>2026-01-23 11:15:05</sys_updated_on>
     </sys_embedded_help_role>
 </record_update>
