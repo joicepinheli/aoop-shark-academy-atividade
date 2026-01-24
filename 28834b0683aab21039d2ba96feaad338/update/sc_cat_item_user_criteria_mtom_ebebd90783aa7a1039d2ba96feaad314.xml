@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="New Social Media Post">0c78594f836a7a1039d2ba96feaad3bd</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-24 14:01:32</sys_created_on>
+        <sys_id>ebebd90783aa7a1039d2ba96feaad314</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Social Media Post.Social Media Users</sys_name>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_ebebd90783aa7a1039d2ba96feaad314</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-24 14:01:32</sys_updated_on>
+        <user_criteria display_value="Social Media Users">b7bb550783aa7a1039d2ba96feaad338</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+</record_update>
