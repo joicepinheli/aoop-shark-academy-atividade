@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>state</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Post - Status indicator onChange state</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+  if (isLoading) return;
+
+  // Se o campo indicador não existir no formulário, aborta
+  if (!g_form.getControl('status_indicator')) {
+    console.warn('status_indicator não presente no formulário');
+    return;
+  }
+
+  // Função local para testes; se tiver UI Script global, pode chamar window.buildIndicatorHtml(newValue)
+  function buildIndicatorHtml(state) {
+    state = state ? state.toString() : '';
+
+    function stepStyle() { return 'padding:4px 8px;border-radius:4px;background:#eee;color:#333;'; }
+    function doneStyle() { return 'padding:4px 8px;border-radius:4px;background:#2ecc71;color:#fff;'; }
+    function activeStyle() { return 'padding:4px 8px;border-radius:4px;background:#3498db;color:#fff;'; }
+
+    var draftDone = (state === 'Published' || state === 'Follow-up' || state === 'Closed');
+    var publishedDone = (state === 'Follow-up' || state === 'Closed');
+    var followUpDone = (state === 'Closed');
+
+    var s = '<div class="progress-indicator" style="display:flex;gap:8px;align-items:center;font-weight:600;">';
+    s += '<span style="' + (draftDone ? doneStyle() : (state === 'Draft' ? activeStyle() : stepStyle())) + '">Draft</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (publishedDone ? doneStyle() : (state === 'Published' ? activeStyle() : stepStyle())) + '">Published</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (followUpDone ? doneStyle() : (state === 'Follow-up' ? activeStyle() : stepStyle())) + '">Follow-up</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (state === 'Closed' ? activeStyle() : stepStyle()) + '">Closed</span>';
+    s += '</div>';
+    return s;
+  }
+
+  try {
+    // Preferir UI Script global se disponível
+    var html;
+    if (typeof window.buildIndicatorHtml === 'function') {
+      html = window.buildIndicatorHtml(newValue);
+    } else {
+      html = buildIndicatorHtml(newValue);
+    }
+
+    // 1) Tenta setar via API (funciona se o campo for HTML)
+    try {
+      g_form.setValue('status_indicator', html);
+    } catch (e) {
+      console.warn('g_form.setValue falhou:', e);
+    }
+
+    // 2) Fallback visual: injetar container no DOM próximo ao campo (Classic UI)
+    var fieldEl = document.querySelector('[name="status_indicator"]');
+    if (fieldEl) {
+      var container = fieldEl.closest('.form-group') || fieldEl.parentElement;
+      if (container) {
+        var render = container.querySelector('.status-indicator-render');
+        if (!render) {
+          render = document.createElement('div');
+          render.className = 'status-indicator-render';
+          render.style.marginTop = '6px';
+          container.appendChild(render);
+        }
+        render.innerHTML = html;
+      } else {
+        // fallback direto
+        try { fieldEl.innerHTML = html; } catch (ex) { console.warn('Não foi possível injetar innerHTML diretamente', ex); }
+      }
+    } else {
+      console.warn('Elemento [name="status_indicator"] não encontrado no DOM.');
+    }
+  } catch (err) {
+    console.error('Erro ao gerar/injetar status_indicator:', err);
+  }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 16:54:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>15cc4f5f83a2321039d2ba96feaad3c5</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Post - Status indicator onChange state</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sys_script_client_15cc4f5f83a2321039d2ba96feaad3c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 18:21:57</sys_updated_on>
+        <table>x_1882391_social_0_post</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

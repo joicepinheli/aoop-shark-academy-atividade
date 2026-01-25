@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1882391_social_0.PostIndicatorUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PostIndicatorUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PostIndicatorUtil = Class.create();
+PostIndicatorUtil.prototype = {
+  initialize: function() {},
+
+  buildIndicatorHtml: function(state) {
+    state = state ? state.toString() : '';
+
+    function stepStyle() { return 'padding:4px 8px;border-radius:4px;background:#eee;color:#333;'; }
+    function doneStyle() { return 'padding:4px 8px;border-radius:4px;background:#2ecc71;color:#fff;'; }
+    function activeStyle() { return 'padding:4px 8px;border-radius:4px;background:#3498db;color:#fff;'; }
+
+    var draftDone = (state === 'Published' || state === 'Follow-up' || state === 'Closed');
+    var publishedDone = (state === 'Follow-up' || state === 'Closed');
+    var followUpDone = (state === 'Closed');
+
+    var s = '<div class="progress-indicator" style="display:flex;gap:8px;align-items:center;font-weight:600;">';
+    s += '<span style="' + (draftDone ? doneStyle() : (state === 'Draft' ? activeStyle() : stepStyle())) + '">Draft</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (publishedDone ? doneStyle() : (state === 'Published' ? activeStyle() : stepStyle())) + '">Published</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (followUpDone ? doneStyle() : (state === 'Follow-up' ? activeStyle() : stepStyle())) + '">Follow-up</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (state === 'Closed' ? activeStyle() : stepStyle()) + '">Closed</span>';
+    s += '</div>';
+    return s;
+  },
+
+  type: 'PostIndicatorUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 18:02:27</sys_created_on>
+        <sys_id>eb0c1b1f8326321039d2ba96feaad336</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PostIndicatorUtil</sys_name>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sys_script_include_eb0c1b1f8326321039d2ba96feaad336</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 18:02:27</sys_updated_on>
+    </sys_script_include>
+</record_update>

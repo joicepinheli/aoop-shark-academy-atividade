@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="DELETE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>x_1882391_social_0.buildIndicatorHtml_li</name>
+        <script><![CDATA[// UI Script: buildIndicatorHtml_lib
+// Application: Social Media Management
+(function(window, undefined) {
+  // evita redefinir se já existir
+  if (window.buildIndicatorHtml && typeof window.buildIndicatorHtml === 'function') {
+    return;
+  }
+
+  // estilos reutilizáveis
+  function stepStyle() { return 'padding:4px 8px;border-radius:4px;background:#eee;color:#333;'; }
+  function doneStyle() { return 'padding:4px 8px;border-radius:4px;background:#2ecc71;color:#fff;'; }
+  function activeStyle() { return 'padding:4px 8px;border-radius:4px;background:#3498db;color:#fff;'; }
+
+  // função exposta globalmente
+  window.buildIndicatorHtml = function(state) {
+    // normaliza null/undefined e padroniza capitalização
+    state = state ? state.toString() : '';
+    // se seus valores de state forem sys_id ou labels diferentes, ajuste aqui
+
+    var draftDone = (state === 'Published' || state === 'Follow-up' || state === 'Closed');
+    var publishedDone = (state === 'Follow-up' || state === 'Closed');
+    var followUpDone = (state === 'Closed');
+
+    var s = '<div class="progress-indicator" style="display:flex;gap:8px;align-items:center;font-weight:600;">';
+    s += '<span style="' + (draftDone ? doneStyle() : (state === 'Draft' ? activeStyle() : stepStyle())) + '">Draft</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (publishedDone ? doneStyle() : (state === 'Published' ? activeStyle() : stepStyle())) + '">Published</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (followUpDone ? doneStyle() : (state === 'Follow-up' ? activeStyle() : stepStyle())) + '">Follow-up</span>';
+    s += '<span style="margin:0 6px;">➡</span>';
+    s += '<span style="' + (state === 'Closed' ? activeStyle() : stepStyle()) + '">Closed</span>';
+    s += '</div>';
+    return s;
+  };
+
+})(window);]]></script>
+        <script_name>buildIndicatorHtml_lib</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 17:40:20</sys_created_on>
+        <sys_id>050797938326321039d2ba96feaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1882391_social_0.buildIndicatorHtml_li</sys_name>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sys_ui_script_050797938326321039d2ba96feaad37d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 17:40:20</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</application>
+        <file_path/>
+        <instance_id>c4033bb6ebb70e18e9bbfddacad0cd58</instance_id>
+        <instance_name>dev286306</instance_name>
+        <name>sys_ui_script_050797938326321039d2ba96feaad37d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description/&gt;&lt;global&gt;false&lt;/global&gt;&lt;ignore_in_now_experience&gt;false&lt;/ignore_in_now_experience&gt;&lt;name&gt;x_1882391_social_0.buildIndicatorHtml_li&lt;/name&gt;&lt;script&gt;&lt;![CDATA[// UI Script: buildIndicatorHtml_lib
+// Application: Social Media Management
+(function(window, undefined) {
+  // evita redefinir se já existir
+  if (window.buildIndicatorHtml &amp;&amp; typeof window.buildIndicatorHtml === 'function') {
+    return;
+  }
+
+  // estilos reutilizáveis
+  function stepStyle() { return 'padding:4px 8px;border-radius:4px;background:#eee;color:#333;'; }
+  function doneStyle() { return 'padding:4px 8px;border-radius:4px;background:#2ecc71;color:#fff;'; }
+  function activeStyle() { return 'padding:4px 8px;border-radius:4px;background:#3498db;color:#fff;'; }
+
+  // função exposta globalmente
+  window.buildIndicatorHtml = function(state) {
+    // normaliza null/undefined e padroniza capitalização
+    state = state ? state.toString() : '';
+    // se seus valores de state forem sys_id ou labels diferentes, ajuste aqui
+
+    var draftDone = (state === 'Published' || state === 'Follow-up' || state === 'Closed');
+    var publishedDone = (state === 'Follow-up' || state === 'Closed');
+    var followUpDone = (state === 'Closed');
+
+    var s = '&lt;div class="progress-indicator" style="display:flex;gap:8px;align-items:center;font-weight:600;"&gt;';
+    s += '&lt;span style="' + (draftDone ? doneStyle() : (state === 'Draft' ? activeStyle() : stepStyle())) + '"&gt;Draft&lt;/span&gt;';
+    s += '&lt;span style="margin:0 6px;"&gt;➡&lt;/span&gt;';
+    s += '&lt;span style="' + (publishedDone ? doneStyle() : (state === 'Published' ? activeStyle() : stepStyle())) + '"&gt;Published&lt;/span&gt;';
+    s += '&lt;span style="margin:0 6px;"&gt;➡&lt;/span&gt;';
+    s += '&lt;span style="' + (followUpDone ? doneStyle() : (state === 'Follow-up' ? activeStyle() : stepStyle())) + '"&gt;Follow-up&lt;/span&gt;';
+    s += '&lt;span style="margin:0 6px;"&gt;➡&lt;/span&gt;';
+    s += '&lt;span style="' + (state === 'Closed' ? activeStyle() : stepStyle()) + '"&gt;Closed&lt;/span&gt;';
+    s += '&lt;/div&gt;';
+    return s;
+  };
+
+})(window);]]&gt;&lt;/script&gt;&lt;script_name&gt;buildIndicatorHtml_lib&lt;/script_name&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-01-25 17:40:20&lt;/sys_created_on&gt;&lt;sys_id&gt;050797938326321039d2ba96feaad37d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_1882391_social_0.buildIndicatorHtml_li&lt;/sys_name&gt;&lt;sys_package display_value="Social Media Management" source="x_1882391_social_0"&gt;28834b0683aab21039d2ba96feaad338&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Social Media Management"&gt;28834b0683aab21039d2ba96feaad338&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_050797938326321039d2ba96feaad37d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-01-25 17:40:20&lt;/sys_updated_on&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2065135089</payload_hash>
+        <record_name>x_1882391_social_0.buildIndicatorHtml_li</record_name>
+        <reverted_from/>
+        <source>c6b607da836a361039d2ba96feaad387</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 17:40:20</sys_created_on>
+        <sys_id>9297d7d38326321039d2ba96feaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19bf63e0db60000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 17:40:20</sys_updated_on>
+        <type>UI Script</type>
+        <update_guid>5297d7d321263210bc9281b5097892fb</update_guid>
+        <update_guid_history>5297d7d321263210bc9281b5097892fb:2065135089</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 17:43:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_script">sys_ui_script</sys_db_object>
+        <sys_id>bd3593945fff4f7abb282d5a3ff5a244</sys_id>
+        <sys_metadata>050797938326321039d2ba96feaad37d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1882391_social_0.buildIndicatorHtml_li</sys_name>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_scope_delete display_value="">5ea8e85d88e14d8ea832e7ca37920a64</sys_scope_delete>
+        <sys_update_name>sys_ui_script_050797938326321039d2ba96feaad37d</sys_update_name>
+        <sys_update_version display_value="sys_ui_script_050797938326321039d2ba96feaad37d">9297d7d38326321039d2ba96feaad3fc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 17:43:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

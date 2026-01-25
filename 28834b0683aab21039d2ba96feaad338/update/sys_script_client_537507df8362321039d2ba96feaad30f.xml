@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Post - Guidance message onLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+  // Proteção caso g_form não esteja disponível
+  if (typeof g_form === 'undefined') return;
+
+  // Mensagem traduzível
+  var msg = getMessage(
+    'Lembrete: informe a data de publicação somente no dia da publicação. ' +
+    'Quando o acompanhamento terminar, marque End follow-up para atualizar o Status para Closed.'
+  );
+
+  // Exibe mensagem no topo do formulário (Classic UI)
+  g_form.addInfoMessage(msg);
+
+  // Opcional: mensagem ao lado do campo publication_date
+  // g_form.showFieldMsg('publication_date', 'Informe a data apenas no dia da publicação.', 'info', false);
+
+  // Garante que o campo indicador (se existir) esteja somente leitura e visível
+  if (g_form.isNewRecord || g_form.getValue('status_indicator') !== undefined) {
+    g_form.setReadOnly('status_indicator', true);
+    g_form.setDisplay('status_indicator', true);
+  }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-25 16:27:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>537507df8362321039d2ba96feaad30f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Post - Guidance message onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sys_script_client_537507df8362321039d2ba96feaad30f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-25 16:50:33</sys_updated_on>
+        <table>x_1882391_social_0_post</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

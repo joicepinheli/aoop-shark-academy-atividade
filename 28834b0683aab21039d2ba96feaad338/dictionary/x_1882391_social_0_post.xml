@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="ea39074283eab21039d2ba96feaad390" extends="task" label="Post" max_length="40" name="x_1882391_social_0_post" type="collection">
+        <element display="true" label="Status Indicator" max_length="40" name="status_indicator" read_only="true" type="html"/>
         <element label="Channel" max_length="32" name="channel" reference="x_1882391_social_0_channel" type="reference"/>
         <element label="Publication date" max_length="40" name="publication_date" type="glide_date"/>
         <element label="End follow-up" max_length="40" name="end_follow_up" type="boolean"/>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>false</disabled>
+        <field>channel</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-24 18:59:24</sys_created_on>
+        <sys_id>bbffdacf83a2ba1039d2ba96feaad3f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>channel</sys_name>
+        <sys_package display_value="Social Media Management" source="x_1882391_social_0">28834b0683aab21039d2ba96feaad338</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Social Media Management">28834b0683aab21039d2ba96feaad338</sys_scope>
+        <sys_update_name>sys_ui_policy_action_bbffdacf83a2ba1039d2ba96feaad3f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-24 18:59:24</sys_updated_on>
+        <table>x_1882391_social_0_post</table>
+        <ui_policy display_value="Channnel Obrigatório">671e520f83a2ba1039d2ba96feaad3e0</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=bbffdacf83a2ba1039d2ba96feaad3f5"/>
+</record_update>
